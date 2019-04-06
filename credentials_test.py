@@ -31,8 +31,18 @@ class TestCredentials(unittest.TestCase):
         test_save_credentials test case to test if the credentials object is saved into
          the credentials list
         '''
-        self.new_credentials.save_credentials() # saving the new contact
-        self.assertEqual(len(Credential.credential_list),1)
+        self.new_credentials.save_credentials() # saving the new credentials
+        self.assertEqual(len(Credentials.credentials_list),1)
+
+    def test_save_multiple_credentials(self):
+            '''
+            test_save_multiple_credentials to check if we can save multiple credentials
+            objects to our credentials_list
+            '''
+            self.new_credentials.save_credebtials()
+            test_credentials = Credentials("Account","pass") # new credentials
+            test_credentials.save_credentials()
+            self.assertEqual(len(Credentials.credentials_list),2)
 
 if __name__ == '__main__':
     unittest.main()    
