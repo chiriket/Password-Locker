@@ -10,3 +10,9 @@ class TestCredential(unittest.TestCase):
         unittest.TestCase: TestCase class that helps in creating test cases
     '''
 
+
+    def setUp(self):
+        '''
+        Set up method to run before each test cases.
+        '''
+        self.new_credential = Credential("Twitter","Chiri","pass123") # create credential object
