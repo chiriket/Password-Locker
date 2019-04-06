@@ -13,7 +13,7 @@ class Credentials:
     def save_credentials(self):
 
         '''
-        save_credential method saves credential objects into credential_list
+        save_credentials method saves credentials objects into credential_list
         '''
 
         Credentials.credentials_list.append(self)

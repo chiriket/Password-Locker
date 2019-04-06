@@ -1,7 +1,7 @@
 import unittest # Importing the unittest module
-from credential import Credential # Importing the credential class
+from credentials import Credentials # Importing the credentials class
 
-class TestCredential(unittest.TestCase):
+class TestCredentials(unittest.TestCase):
 
     '''
     Test class that defines test cases for the credential class behaviours.
@@ -15,16 +15,16 @@ class TestCredential(unittest.TestCase):
         '''
         Set up method to run before each test cases.
         '''
-        self.new_credential = Credential("Twitter","Chiri","pass123") # create credential object
+        self.new_credentials = Credentials("Twitter","Chiri","pass123") # create credential object
     
     def test_init(self):
         '''
         test_init test case to test if the object is initialized properly
         '''
 
-        self.assertEqual(self.new_credential.account_platform,"Twitter")
-        self.assertEqual(self.new_contact.account_name,"Chiri")
-        self.assertEqual(self.new_contact.account_password,"pass123")
+        self.assertEqual(self.new_credentials.account_platform,"Twitter")
+        self.assertEqual(self.new_credentials.account_name,"Chiri")
+        self.assertEqual(self.new_credentials.account_password,"pass123")
 
 if __name__ == '__main__':
     unittest.main()    
