@@ -9,6 +9,11 @@ class TestCredentials(unittest.TestCase):
     Args:
         unittest.TestCase: TestCase class that helps in creating test cases
     '''
+    def tearDown(self):
+            '''
+            tearDown method that does clean up after each test case has run.
+            '''
+            Credentials.credential_list = []
 
 
     def setUp(self):
@@ -43,6 +48,7 @@ class TestCredentials(unittest.TestCase):
             test_credentials = Credentials("Account","pass") # new credentials
             test_credentials.save_credentials()
             self.assertEqual(len(Credentials.credentials_list),2)
-
+    
+   
 if __name__ == '__main__':
     unittest.main()    
