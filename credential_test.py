@@ -1,5 +1,5 @@
 import unittest # Importing the unittest module
-from credential import Credential # Importing the contact class
+from credential import Credential # Importing the credential class
 
 class TestCredential(unittest.TestCase):
 
@@ -25,3 +25,6 @@ class TestCredential(unittest.TestCase):
         self.assertEqual(self.new_credential.account_platform,"Twitter")
         self.assertEqual(self.new_contact.account_name,"Chiri")
         self.assertEqual(self.new_contact.account_password,"pass123")
+
+if __name__ == '__main__':
+    unittest.main()    
