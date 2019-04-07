@@ -37,7 +37,16 @@ class TestCredentials(unittest.TestCase):
          the credentials list
         '''
         self.new_credentials.save_credentials() # saving the new credentials
-        self.assertEqual(len(Credentials.credentials_list),2)
+        self.assertEqual(len(Credentials.credentials_list),3)
+     
+    def test_create_credentials(self):
+        '''
+        test_create_credentials test case to test if the credentials object is added into
+         the credentials list
+        '''
+        self.new_credentials.create_credentials() # create  new credentials
+        self.assertEqual(len(Credentials.credentials_list),1)
+    
 
     def test_save_multiple_credentials(self):
             '''
@@ -47,7 +56,7 @@ class TestCredentials(unittest.TestCase):
             self.new_credentials.save_credentials()
             test_credentials = Credentials("Twitter","Chiri","pass123") # new credentials
             test_credentials.save_credentials()
-            self.assertEqual(len(Credentials.credentials_list),4)
+            self.assertEqual(len(Credentials.credentials_list),5)
 
     def test_delete_credentials(self):
             '''
@@ -58,7 +67,9 @@ class TestCredentials(unittest.TestCase):
             test_credentials.save_credentials()
 
             self.new_credentials.delete_credentials()# Deleting a credentials object
-            self.assertEqual(len(Credentials.credentials_list),1)
+            self.assertEqual(len(Credentials.credentials_list),2)
+
+
 
     def test_display_all_credentials(self):
         '''

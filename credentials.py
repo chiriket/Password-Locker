@@ -18,6 +18,16 @@ class Credentials:
 
         Credentials.credentials_list.append(self)
 
+    def create_credentials(self):
+
+        '''
+        create_credentials method adds credentials objects into credential_list
+        '''
+
+        Credentials.credentials_list.append(self)
+
+    
+
     def delete_credentials(self):
 
         '''
