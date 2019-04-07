@@ -26,9 +26,12 @@ class Credentials:
 
         Credentials.credentials_list.remove(self)
 
-    def test_find_credentials_by_account(self):
+      @classmethod
+    def display_credentials(cls):
         '''
-        test to check if we can find a contact by phone number and display information
+        method that returns the credentials list
         '''
+        return cls.credentials list_list
 
+ 
      
