@@ -26,7 +26,7 @@ class Credentials:
 
         Credentials.credentials_list.remove(self)
 
-      @classmethod
+    @classmethod
     def display_credentials(cls):
         '''
         method that returns the credentials list
