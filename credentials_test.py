@@ -41,7 +41,8 @@ class TestCredentials(unittest.TestCase):
      
     def test_create_credentials(self):
         '''
-        test_create_credentials test case to test if the credentials object is added into
+        test_create_credentials test case to test if the
+         credentials object is added into
          the credentials list
         '''
         self.new_credentials.create_credentials() # create  new credentials
