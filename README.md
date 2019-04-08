@@ -18,11 +18,12 @@ One can view their saved accounts and even has the ability to search for a speci
 When users are done saving their credentials they can then use a short-code and exit the application.
 
 ## Setup/Installation Requirements
-Open your browser browser.
-Load gitHub on your browser.
-Search for chiriket/password-locker.
-Clone the repository content to your machine.
-Run ./run.py on your terminal
+
+* Open your browser.
+* Load gitHub on your browser.
+* Search for chiriket/password-locker.
+* Clone the repository content to your machine.
+* Run ./run.py on your terminal
 
 
 ## Testing the Application
