@@ -17,9 +17,9 @@ def save_user(user):
     '''
     user.save_user()
 
-def create_credentials:
+def create_credentials(platform,name,password):
     '''
-    Function to create a new redential
+    Function to create a new credentials
     '''
     new_credentials = Credentials(platform,name,password)
     return new_credentials
@@ -30,11 +30,11 @@ def save_credentials(credentials):
     '''
     credentials.save_credentials()
 
-def del_credentials(credentials):
+def del_credentials(platform):
     '''
     Function to delete a credentials
     '''
-    credentials.delete_credentials()
+    Credentials.delete_credentials(platform)
 
 
 def display_credentials():
@@ -65,20 +65,21 @@ def main():
             print("Password....")
             password = input()
 
-            save_user (create_new_user(first_name, last_name, user_name, password))  
+            save_user (create_user(login_name, password))  
             print('\n')
             print(f"New Account for {login_name } created")
             print (f'hello {login_name}, you are now logged in!')
             print('\n')
             while True:
-                    print('To proceed use these shortcodes:\n cc - Create new Credentials, dc - Delete Credential, fd - Find Credential, ds - display saved credentials, ex - exit')
+                    print('To proceed use these shortcodes:\n cc - Create new Credentials, dc - Delete Credential, ds - display saved credentials, ex - exit')
                     short_code = input().lower()
                     if short_code == 'ex':
                         print ('\n')
                         print(f'Goodbye { login_name}.')
                         break
 
-                    if display_credentials():
+                    elif short_code == 'ds':
+                        if display_credentials():
                             print ('\n')
                             print('Here is a list of your saved credentials')
                             print('\n')
@@ -92,41 +93,52 @@ def main():
                             print ('\n')
                             print ('Looks like you haven\'t saved that credential yet!')
                             print ('\n')
-                    elif short_code == 'cc':
-                        print ('\n')
-                        print ("New Credentials")
-                        print ("-"*10)
 
-                        print("Acount platform:")
-                        account_platform = input()
+                    
+                    elif short_code == 'dc':
+                            print("Enter the name of the account you want to delete")
 
-                        print("Account name:")
-                        account_name = input()
+                            deleted_account = input()
+                            if del_credentials(deleted_account):
+                                del_credentials(deleted_account)
 
-                        while True:
-                            print('Please choose an option for entering your password by choosing a short-code! \n mp -enter my password, gp - generate a password for me!')
-                            short_code = input().lower()
-                            if short_code == 'mp':
-                                print("Account password:")
-                                account_password = input()
-                                break
-                            elif short_code =='gp':
-                                chars = "abcdefghijklmnopqrstuvwxyz1234567890"
-                                account_password = "".join(random.choice(chars) for _ in range(10))
-                                break
-                            else: 
-                                print('Ooops!I did not get that. Please try again!')
-                            
+                    elif  short_code == 'cc':
+                            print ('\n')
+                            print ("New Credentials")
+                            print ("-"*10)
 
-                        save_credentials(create_credentials(account_platform, account_name, account_password))
-                        print('\n')
-                        print(f'New Credentials: {account_platform } {account__name } {account_password}')
-                        print('\n')
-     
+                            print("Acount platform:")
+                            account_platform = input()
+
+                            print("Account name:")
+                            account_name = input()
+
+                            while True:
+                                print('Please choose an option for entering your password by choosing a short-code! \n mp -enter my password, gp - generate a password for me!')
+                                short_code = input().lower()
+                                if short_code == 'mp':
+                                    print("Account password:")
+                                    account_password = input()
+                                    break
+                                elif short_code =='gp':
+                                    chars = "abcdefghijklmnopqrstuvwxyz1234567890"
+                                    account_password = "".join(random.choice(chars) for _ in range(10))
+                                    break
+
+                            save_credentials(create_credentials(account_platform, account_name, account_password))
+                            print('\n')
+                            print(f'New Credentials: {account_platform } {account_name } {account_password}')
+                            print('\n')
+
+                        
+                    else: 
+                            print('Ooops!I did not get that. Please try again!')    
+                                
 
         elif short_code =='ex':
             print("Have a lovely day!")
             break
+
         else:
             print('\n')
             print("I really didn't get that. Please use the short codes")

@@ -27,14 +27,17 @@ class Credentials:
         Credentials.credentials_list.append(self)
 
     
-
-    def delete_credentials(self):
+    @classmethod
+    def delete_credentials(cls, platform):
 
         '''
         delete_credentials method deletes a saved credentials from the credentials_list
         '''
+        for account in cls.credentials_list:
+            if account.account_platform == platform:
+                cls.credentials_list.remove(account)
 
-        Credentials.credentials_list.remove(self)
+        
 
 
     @classmethod
