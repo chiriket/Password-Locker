@@ -2,6 +2,7 @@
 
 from user import User
 from credentials import Credentials
+import random
 
 def create_user(login_name,password):
     '''
