@@ -1,7 +1,7 @@
 # Password-Locker
 
 This is an application where users can store their login credentials for all their accounts. 2019
-####By Shirley Keter
+#### By Shirley Keter
 
 ## Description
 The application allows users with multiple accounts to store their credentials.They can then access their details search as their account usernames and passwords through their application.The application also allows users to create new credentials for different accounts.
